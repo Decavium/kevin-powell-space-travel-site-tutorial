@@ -1,14 +1,14 @@
-/* ------------------------- */
-/*     Custom properties     */
-/* ------------------------- */
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
 
 :root {
     /* colors */
     --clr-dark: 230 35% 7%;
     --clr-light: 231 77% 90%;
     --clr-white: 0 0% 100%;
-
-    /* font sizes */
+    
+    /* font-sizes */
     --fs-900: 9.375rem;
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
@@ -19,44 +19,31 @@
     --fs-200: 0.875rem;
 }
 
-/* ------------- */
-/*     Reset     */
-/* ------------- */
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
 
 /* https://piccalil.li/blog/a-more-modern-css-reset/ */
 
-/* Box sizing rules */
+/* Box sizing */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* Prevent font size inflation */
-html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-}
-
-/* Remove default margin in favour of better control in authored CSS */
+/* Reset margins */
 body,
 h1,
 h2,
 h3,
 h4,
+h5,
 p,
 figure,
-blockquote,
-dl,
-dd {
-    margin-block-end: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-    list-style: none;
+picture {
+    margin: 0; 
 }
 
 h1,
@@ -69,49 +56,23 @@ p {
     font-weight: 400;
 }
 
-/* Set core body defaults */
+/* set up the body */
 body {
-    font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
-    color: hsl(var(--clr-white));
-    background-color: hsl(var(--clr-dark));
-    min-height: 100vh;
+    color: hsl( var(--clr-white) );
+    background-color: hsl( var(--clr-dark) );
     line-height: 1.5;
+    min-height: 100vh;
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
-input,
-label {
-    line-height: 1.1;
-}
-
-/* Balance text wrapping on headings */
-h1,
-h2,
-h3,
-h4 {
-    text-wrap: balance;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-    color: currentColor;
-}
-
-/* Make images easier to work with */
+/* make images easier to work with */
 img,
-picture {
+picutre {
     max-width: 100%;
     display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
+/* make form elements easier to work with */
 input,
 button,
 textarea,
@@ -119,33 +80,24 @@ select {
     font: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-    min-height: 10em;
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-    scroll-margin-block: 5ex;
-}
 
-/* Remove animations for people who've turned them off */
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
 
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* ----------------------- */
-/*     Utility classes     */
-/* ----------------------- */
+/* general */
 
 .flex {
     display: flex;
@@ -157,116 +109,119 @@ textarea:not([rows]) {
     gap: var(--gap, 1rem);
 }
 
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
 .container {
     padding-inline: 2em;
     margin-inline: auto;
     max-width: 80rem;
 }
 
-/* Screen-reader class */
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    /* added line */
-    border: 0;
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }
 
 /* colors */
 
-.bg-dark {
-    background-color: hsl(var(--clr-dark));
-}
+.bg-dark { background-color: hsl( var(--clr-dark) );}
+.bg-accent { background-color: hsl( var(--clr-light) );}
+.bg-white { background-color: hsl( var(--clr-white) );}
 
-.bg-accent {
-    background-color: hsl(var(--clr-light));
-}
-
-.bg-white {
-    background-color: hsl(var(--clr-white));
-}
-
-.text-dark {
-    color: hsl(var(--clr-dark));
-}
-
-.text-accent {
-    color: hsl(var(--clr-light));
-}
-
-.text-white {
-    color: hsl(var(--clr-white));
-}
+.text-dark { color: hsl( var(--clr-dark) );}
+.text-accent { color: hsl( var(--clr-light) );}
+.text-white { color: hsl( var(--clr-white) );}
 
 /* typography */
-.ff-serif {
-    font-family: var(--ff-serif);
-}
 
-.ff-sans-cond {
-    font-family: var(--ff-sans-cond);
-}
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
 
-.ff-sans-normal {
-    font-family: var(--ff-sans-normal);
-}
+.uppercase { text-transform: uppercase; }
 
-.letter-spacing-1 {
-    letter-spacing: 4.75px;
-}
-
-.letter-spacing-2 {
-    letter-spacing: 2.7px;
-}
-
-.letter-spacing-3 {
-    letter-spacing: 2.35px;
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.fs-900 {
-    font-size: var(--fs-900);
-}
-
-.fs-800 {
-    font-size: var(--fs-800);
-}
-
-.fs-700 {
-    font-size: var(--fs-700);
-}
-
-.fs-600 {
-    font-size: var(--fs-600);
-}
-
-.fs-500 {
-    font-size: var(--fs-500);
-}
-
-.fs-400 {
-    font-size: var(--fs-400);
-}
-
-.fs-300 {
-    font-size: var(--fs-300);
-}
-
-.fs-200 {
-    font-size: var(--fs-200);
-}
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
 
 .fs-900,
 .fs-800,
 .fs-700,
 .fs-600 {
     line-height: 1.1;
+}
+
+.numbered-title {
+    font-size: var(--fs-500);
+    letter-spacing: 4.72px;
+    text-transform: uppercase;
+}
+
+.numbered-title span {
+    color: hsl(var(--clr-light) /.25);
+    margin-right: .5em;
+    font-weight: 700;
+}
+
+/* ------------------- */
+/* Components          */
+/* ------------------- */
+
+.large-button {
+    position: relative;
+    display: grid;
+    z-index: 1; /* force new stacking context */
+    place-items: center;
+    padding: 0 2em;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    text-decoration: none;
+    border: unset; /* remove React button styling */
+}
+
+.large-button::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: hsl(var(--clr-white) /.15);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.primary-navigation {
+    --gap: 8rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+
+.primary-navigation a > span {
+    font-weight: ;
 }
