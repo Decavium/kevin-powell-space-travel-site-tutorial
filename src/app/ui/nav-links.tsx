@@ -16,7 +16,7 @@ export default function NavLinks({links}: Props) {
   const pathname = usePathname();
 
   return (
-    <div className="primary-navigation flex">
+    <div className="primary-navigation underline-indicators flex">
       {links.map((link, index) => {
         return (
           <Link
