@@ -1,5 +1,6 @@
 import LargeButton from "../ui/large-button";
 import NavLinks from "../ui/nav-links";
+import Tabs from "../ui/tabs";
 
 export default function Page() {
     return (
@@ -91,9 +92,9 @@ export default function Page() {
                         {/* navigation */}
                         <div>
                             <NavLinks links={[
-                                { name: "Active", href: "#" },
+                                { name: "Active", href: "/design-system" },
                                 { name: "Hovered", href: "#" },
-                                { name: "Idle", href: "#"}
+                                { name: "Idle", href: "#" }
                             ]}></NavLinks>
                         </div>
 
@@ -105,7 +106,11 @@ export default function Page() {
 
                             <div style={{ marginBottom: "50vh" }}>
                                 {/* Tabs */}
-
+                                <Tabs tabs={[
+                                    { name: "Moon", selected: true },
+                                    { name: "Mars" },
+                                    { name: "Europa" },
+                                ]}></Tabs>
 
                                 {/* Dots */}
 

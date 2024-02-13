@@ -4,16 +4,18 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 interface LinkObj {
-    name: string;
-    href: string;
+  name: string;
+  href: string;
 }
 
 type Props = {
-    links: LinkObj[]
+  links: LinkObj[]
 }
 
-export default function NavLinks({links}: Props) {
+export default function NavLinks({ links }: Props) {
   const pathname = usePathname();
+
+  const isActive = (href: string) => pathname == href;
 
   return (
     <div className="primary-navigation underline-indicators flex">
@@ -22,7 +24,7 @@ export default function NavLinks({links}: Props) {
           <Link
             key={link.name}
             href={link.href}
-            className="uppercase text-white letter-spacing-2"
+            className={`uppercase text-white letter-spacing-2 ${isActive(link.href) ? "active" : ""}`}
           >
             <p><span>{index > 9 ? index + 1 : `0${index + 1}`}</span>{link.name}</p>
           </Link>
