@@ -1,6 +1,8 @@
 import LargeButton from "../ui/large-button";
 import NavLinks from "../ui/nav-links";
 import Tabs from "../ui/tabs";
+import Dots from "../ui/dots";
+import Numbers from "../ui/numbers";
 
 export default function Page() {
     return (
@@ -104,18 +106,27 @@ export default function Page() {
                                 <LargeButton>Explore</LargeButton>
                             </div>
 
-                            <div style={{ marginBottom: "50vh" }}>
+                            <div className="flow" style={{ marginBottom: "50vh", ["--flow-space" as any]: "4rem" }}>
                                 {/* Tabs */}
                                 <Tabs tabs={[
-                                    { name: "Moon", selected: true },
+                                    { name: "Moon" },
                                     { name: "Mars" },
                                     { name: "Europa" },
                                 ]}></Tabs>
 
                                 {/* Dots */}
-
+                                <Dots dots={[
+                                    { name: "Slide title" },
+                                    { name: "Slide title" },
+                                    { name: "Slide title" },
+                                ]}></Dots>
 
                                 {/* Numbers */}
+                                <Numbers numbers={[
+                                    { name: "Number title" },
+                                    { name: "Number title" },
+                                    { name: "Number title" },
+                                ]}></Numbers>
                             </div>
                         </div>
 

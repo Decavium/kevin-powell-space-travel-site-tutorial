@@ -1,6 +1,5 @@
 interface tabObj {
     name: string;
-    selected?: boolean;
 }
 
 type Props = {
@@ -9,14 +8,14 @@ type Props = {
 
 export default function Tabs({ tabs }: Props) {
 
-    const isSelected = (selected?: boolean) => selected === true ? true : false; 
+    const isSelected = (index: number) => index === 0 ? true : false;
 
     return (
         <div className="tab-list underline-indicators flex">
-            {tabs.map((tab) => {
+            {tabs.map((tab, index) => {
                 return (
                     <button
-                        aria-selected={isSelected(tab.selected)}
+                        aria-selected={isSelected(index)}
                         key={tab.name}
                         className={`uppercase text-accent letter-spacing-2 bg-dark`}
                     >
@@ -26,4 +25,4 @@ export default function Tabs({ tabs }: Props) {
             })}
         </div>
     );
-    }
+}
