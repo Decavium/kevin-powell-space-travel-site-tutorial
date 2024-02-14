@@ -1,6 +1,7 @@
 import '@/app/ui/global.css';
 import type { Metadata } from "next";
 import { barlow, barlow_condensed, bellefair } from './ui/fonts';
+import Nav from './ui/nav';
 
 export const metadata: Metadata = {
   title: {
@@ -16,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${barlow.className} ${barlow_condensed.className} ${bellefair.className}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${barlow.className} antialiased ${barlow_condensed.className} antialiased s${bellefair.className} antialiased`}>  
+      <body><Nav></Nav>{children}</body>
     </html>
   );
 }
