@@ -5,11 +5,15 @@ export default function Nav() {
     return (
         <>
             <header className="primary-header">
-                <div></div>
+                <div>
+                    
+                </div>
                 <NavLinks links={[
-                    { name: "Active", href: "/" },
-                    { name: "Hovered", href: "#" },
-                    { name: "Idle", href: "#" }
+                    { name: "Home", href: "/" },
+                    { name: "Destination", href: "/destination" },
+                    { name: "Crew", href: "/crew" },
+                    { name: "Technology", href: "/technology" },
+                    { name: "Design System", href: "/design-system" },
                 ]}></NavLinks>
             </header>
         </>
