@@ -3,6 +3,11 @@ import NavLinks from "../ui/nav-links";
 import Tabs from "../ui/tabs";
 import Dots from "../ui/dots";
 import Numbers from "../ui/numbers";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Design System",
+};
 
 export default function Page() {
     return (

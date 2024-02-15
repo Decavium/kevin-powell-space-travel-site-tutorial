@@ -6,7 +6,7 @@ import Nav from './ui/nav';
 export const metadata: Metadata = {
   title: {
     template: '%s | Space Tourism Site',
-    default: 'Space Tourism Site'
+    default: 'Space Tourism Site',
   },
   description: "A website made to practice CSS and NextJS",
 };

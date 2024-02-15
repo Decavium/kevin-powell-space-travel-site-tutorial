@@ -26,7 +26,7 @@ export default function NavLinks({ links }: Props) {
             href={link.href}
             className={`uppercase text-white letter-spacing-2 ${isActive(link.href) ? "active" : ""}`}
           >
-            <p><span>{index > 9 ? index + 1 : `0${index + 1}`}</span>{link.name}</p>
+            <p><span>{index > 9 ? index : `0${index}`}</span>{link.name}</p>
           </Link>
         );
       })}

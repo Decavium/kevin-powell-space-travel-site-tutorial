@@ -1,13 +1,12 @@
+import Logo from "./logo";
 import NavLinks from "./nav-links";
 
 export default function Nav() {
 
     return (
         <>
-            <header className="primary-header">
-                <div>
-                    
-                </div>
+            <header className="primary-header flex">
+                <Logo></Logo>
                 <NavLinks links={[
                     { name: "Home", href: "/" },
                     { name: "Destination", href: "/destination" },

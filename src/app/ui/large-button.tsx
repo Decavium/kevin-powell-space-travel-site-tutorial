@@ -6,7 +6,7 @@ export default function LargeButton({ children, className, ...rest }: ButtonProp
     return (
         <button
             {...rest}
-            className={`large-button fs-600 uppercase letter-spacing-2 text-dark bg-white ${className}`} style={{ fontFamily: "--ff-serif" }}>
+            className={`large-button uppercase letter-spacing-2 text-dark bg-white ${className}`} style={{ fontFamily: "--ff-serif" }}>
             {children}
         </button>
     )
