@@ -1,8 +1,21 @@
 import LargeButton from "./ui/large-button";
+import Image from "next/image";
+import BackgroundHomeMobile from '/public/images/home/background-home-mobile.jpg';
 
 export default function Home() {
   return (
     <main className="home">
+
+      <Image
+        className="home-background__mobile"
+        src={BackgroundHomeMobile}
+        placeholder="blur"
+        quality={100}
+        fill
+        sizes="100vw"
+        alt="Background image of Earth taken from orbit."
+      ></Image>
+
       <div className="grid-container grid-container--home">
         <div>
           <h1 className="text-accent fs-500 uppercase letter-spacing-1">So, you want to travel to
