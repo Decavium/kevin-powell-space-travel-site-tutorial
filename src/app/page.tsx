@@ -6,15 +6,7 @@ export default function Home() {
   return (
     <main className="home">
 
-      <Image
-        className="home-background__mobile"
-        src={BackgroundHomeMobile}
-        placeholder="blur"
-        quality={100}
-        fill
-        sizes="100vw"
-        alt="Background image of Earth taken from orbit."
-      ></Image>
+
 
       <div className="grid-container grid-container--home">
         <div>
