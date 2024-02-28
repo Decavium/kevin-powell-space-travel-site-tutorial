@@ -14,6 +14,7 @@ const getMatches = (query: string): boolean => {
  * @param query A media query as string
  * @returns
  * @author Adrian Fahrbach
+ * @link https://github.com/vercel/next.js/discussions/21379
  */
 export function useMediaQuery(query: string): boolean | undefined {
     const [hasMatch, setHasMatches] = useState<boolean>(getMatches(query));
@@ -23,7 +24,7 @@ export function useMediaQuery(query: string): boolean | undefined {
         if (initialLoad) {
             setInitialLoad(false);
         }
-    }, []);
+    }, [initialLoad]);
 
     function handleChange() {
         setHasMatches(getMatches(query));
@@ -40,4 +41,13 @@ export function useMediaQuery(query: string): boolean | undefined {
     }, [query]);
 
     return initialLoad ? undefined : hasMatch;
+}
+
+/** 
+ * Returns a pixel size depending on the rem provided.
+ * @param rem A rem query as a number
+ * @returns
+ * */ 
+export function convertRemToPixels(rem: number) {
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }

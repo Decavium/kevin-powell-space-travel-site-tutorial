@@ -12,7 +12,8 @@ interface BackgroundImageProps {
   desktop: StaticImageData;
 }
 
-
+// Thanks to Dom Webber on Medium for the inspiration!
+// https://medium.com/@dom.webber/nextjs-13-tailwindcss-responsive-background-image-eb8ead82ab4e
 export default function BackgroundImage({
   alt, mobile, tablet, desktop
 }: BackgroundImageProps) {
@@ -20,46 +21,51 @@ export default function BackgroundImage({
   const isMobile = useMediaQuery(`(max-width: 767.98px)`);
   const isTablet = useMediaQuery(`(max-width: 767.98px)`);
 
-
-
   return (
     <>
-      {(!isMobile || isMobile === undefined) && (
-        <Image
-          src={desktop}
-          // placeholder="blur"
-          quality={100}
-          fill
-          sizes="100vw"
-          alt={alt}
-          className="home-background__mobile"
-        />
-      )}
       {(isMobile || isMobile === undefined) && (
-        <Image
+        <Background
           src={mobile}
-          // placeholder="blur"
-          quality={100}
-          fill
-          sizes="100vw"
           alt={alt}
-          className="home-background__mobile"
         />
       )}
-      {tablet && (isMobile || isMobile === undefined) && (
-        <Image
+      {tablet && ((!isMobile && isTablet) || isMobile === undefined) && (
+        <Background
           src={tablet}
-          // placeholder="blur"
-          quality={100}
-          fill
-          sizes="100vw"
           alt={alt}
-          className="home-background__mobile"
+        />
+      )}
+      {((!isMobile && !isTablet) || isMobile === undefined) && (
+        <Background
+          src={desktop}
+          alt={alt}
         />
       )}
     </>
   );
 }
 
-// Thanks to Dom Webber on Medium for the inspiration!
-// https://medium.com/@dom.webber/nextjs-13-tailwindcss-responsive-background-image-eb8ead82ab4e
+interface BackgroundProps {
+  alt: string;
+  src: StaticImageData;
+  className?: string;
+}
+
+export function Background({
+  src, alt, className
+}: BackgroundProps) {
+  return (
+    <>
+      <Image
+        src={src}
+        placeholder="blur"
+        quality={100}
+        fill
+        sizes="100vw"
+        alt={alt}
+        className={`${className} background-image`}
+      />
+    </>
+  )
+}
+

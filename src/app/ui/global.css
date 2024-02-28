@@ -249,7 +249,7 @@ select {
 
 
 /* ------------------- */
-/* Compontents         */
+/* Components         */
 /* ------------------- */
 
 .large-button {
@@ -339,18 +339,19 @@ select {
     background-color: hsl( var(--clr-white) / 1); 
 }
 
+.background-image {
+    z-index: -1;
+    object-fit: cover;
+    object-position: bottom center;
+}
+
 /* ------------------- */
 /* Page specific       */
 /* ------------------- */
 
-/* home */
 
+
+/* home */
 .home {
 
-}
-
-.home-background__mobile {
-    z-index: -1;
-    object-fit: cover;
-    object-position: bottom center;
 }

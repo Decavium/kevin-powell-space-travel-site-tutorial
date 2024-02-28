@@ -1,16 +1,17 @@
 import BackgroundImage from "./ui/background-image";
 import LargeButton from "./ui/large-button";
 import BackgroundHomeMobile from '/public/images/home/background-home-mobile.jpg';
+import BackgroundHomeDesktop from '/public/images/home/background-home-desktop.jpg';
+import BackgroundHomeTablet from '/public/images/home/background-home-tablet.jpg';
 
 export default function Home() {
   return (
-
     <main className="home">
       <BackgroundImage
-              alt="Background image of Earth taken from orbit."
-              desktop={BackgroundHomeMobile}
+              alt="The background image. It shows Earth from low orbit."
+              desktop={BackgroundHomeDesktop}
               mobile={BackgroundHomeMobile}
-              tablet={BackgroundHomeMobile}
+              tablet={BackgroundHomeTablet}
       />
       <div className="grid-container grid-containeFr--home">
         <div>
