@@ -18,7 +18,7 @@ export default function NavLinks({ links }: Props) {
   const isActive = (href: string) => pathname == href;
 
   return (
-    <div className="primary-navigation underline-indicators flex">
+    <div id="primary-navigation" className="primary-navigation underline-indicators flex">
       {links.map((link, index) => {
         return (
           <Link

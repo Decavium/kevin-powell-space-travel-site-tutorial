@@ -295,7 +295,7 @@ select {
     text-decoration: none;
 }
 
-.primary-navigation a > span {
+.primary-navigation a span {
     font-weight: 700;
     margin-right: .5em;
 }
@@ -354,4 +354,10 @@ select {
 /* home */
 .home {
 
+}
+
+@media (min-width: 35rem) {
+    .background-image {
+        object-position: center center;
+    }
 }

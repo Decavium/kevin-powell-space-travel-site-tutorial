@@ -42,12 +42,3 @@ export function useMediaQuery(query: string): boolean | undefined {
 
     return initialLoad ? undefined : hasMatch;
 }
-
-/** 
- * Returns a pixel size depending on the rem provided.
- * @param rem A rem query as a number
- * @returns
- * */ 
-export function convertRemToPixels(rem: number) {
-    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-}

@@ -18,8 +18,10 @@ export default function BackgroundImage({
   alt, mobile, tablet, desktop
 }: BackgroundImageProps) {
 
-  const isMobile = useMediaQuery(`(max-width: 767.98px)`);
-  const isTablet = useMediaQuery(`(max-width: 767.98px)`);
+  // 35rem if the default is 16px
+  const isMobile = useMediaQuery(`(max-width: 560px)`);
+  // 45rem
+  const isTablet = useMediaQuery(`(max-width: 720px)`);
 
   return (
     <>
