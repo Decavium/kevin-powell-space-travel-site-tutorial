@@ -8,7 +8,7 @@ export default function Logo() {
                 src={LogoSVG}
                 width={48}
                 height={48}
-                alt="logo"
+                alt="The website logo. It shows a star in a circle."
             />
         </>
     )
