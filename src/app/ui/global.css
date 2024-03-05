@@ -328,6 +328,8 @@ select {
         background: transparent;
         border: 0;
     }
+
+    /* Need to add width and aspect ratio for the SVG */
 }
 
 .primary-navigation a {
