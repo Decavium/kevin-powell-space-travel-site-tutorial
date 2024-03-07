@@ -13,7 +13,7 @@ export default function Home() {
               mobile={BackgroundHomeMobile}
               tablet={BackgroundHomeTablet}
       />
-      <div className="grid-container grid-containeFr--home">
+      <div id="main" className="grid-container grid-container--home">
         <div>
           <h1 className="text-accent fs-500 uppercase letter-spacing-1">So, you want to travel to
             <span className="fs-900 text-white d-block" style={{ fontFamily: "--ff-serif" }}>Space</span>

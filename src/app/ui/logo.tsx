@@ -9,6 +9,7 @@ export default function Logo() {
                 width={48}
                 height={48}
                 alt="The website logo. It shows a star in a circle."
+                className="logo"
             />
         </>
     )

@@ -34,7 +34,7 @@ export default function Nav() {
                         { name: "Destination", href: "/destination" },
                         { name: "Crew", href: "/crew" },
                         { name: "Technology", href: "/technology" },
-                        { name: "Design System", href: "/design-system" },
+                        // { name: "Design System", href: "/design-system" },
                     ]} />
             </header>
         </>
