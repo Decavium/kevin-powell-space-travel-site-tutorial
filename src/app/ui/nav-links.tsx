@@ -19,7 +19,7 @@ export default function NavLinks({ links, navOpen }: Props) {
   const isActive = (href: string) => pathname == href;
 
   return (
-    <div id="primary-navigation" className={`${navOpen && "nav-open"} primary-navigation underline-indicators flex`}>
+    <div id="primary-navigation" className={`${navOpen ? "nav-open" : ""} primary-navigation underline-indicators flex`}>
       {links.map((link, index) => {
         return (
           <Link
