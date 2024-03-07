@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,15 +10,16 @@ interface LinkObj {
 
 type Props = {
   links: LinkObj[]
+  navOpen: boolean;
 }
 
-export default function NavLinks({ links }: Props) {
+export default function NavLinks({ links, navOpen }: Props) {
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname == href;
 
   return (
-    <div id="primary-navigation" className="primary-navigation underline-indicators flex">
+    <div id="primary-navigation" className={`${navOpen && "nav-open"} primary-navigation underline-indicators flex`}>
       {links.map((link, index) => {
         return (
           <Link

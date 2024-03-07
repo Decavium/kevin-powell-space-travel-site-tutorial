@@ -85,12 +85,14 @@ body {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
     color: hsl( var(--clr-white) );
-    background-color: hsl( var(--clr-dark) );
+    background-color: hsl( var(--clr-dark));
     line-height: 1.5;
     min-height: 100vh;
     
     display: grid;
     grid-template-rows: min-content 1fr;
+
+    overflow-x: hidden;
 }
 
 /* make images easier to work with */
@@ -283,6 +285,7 @@ select {
     transform: scale(1.5);
 }
 
+/* pr */
 
 .primary-navigation {
     --underline-gap: 2rem;
@@ -313,6 +316,8 @@ select {
         padding: min(20rem, 15vh) 2rem;
         margin: 0;
         flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 500ms ease-in-out;
     }
 
     .primary-navigation.underline-indicators > .active {
@@ -329,7 +334,19 @@ select {
         border: 0;
     }
 
-    /* Need to add width and aspect ratio for the SVG */
+    .mobile-nav-toggle:focus-visible     {
+        outline: 5px solid white;
+        outline-offset: 5px;
+    }
+
+    .nav-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .nav-open {
+        transform: translateX(0);
+    }
 }
 
 .primary-navigation a {

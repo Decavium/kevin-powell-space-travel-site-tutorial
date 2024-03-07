@@ -97,11 +97,13 @@ export default function Page() {
 
                     {/* navigation */}
                     <div>
-                        <NavLinks links={[
-                            { name: "Active", href: "/design-system" },
-                            { name: "Hovered", href: "#" },
-                            { name: "Idle", href: "#" }
-                        ]}></NavLinks>
+                        <NavLinks
+                            navOpen={false}
+                            links={[
+                                { name: "Active", href: "/design-system" },
+                                { name: "Hovered", href: "#" },
+                                { name: "Idle", href: "#" }
+                            ]}></NavLinks>
                     </div>
 
                     <div className="flex">
