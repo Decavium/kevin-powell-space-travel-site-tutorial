@@ -1,4 +1,5 @@
 import { useState, useEffect, useLayoutEffect } from "react";
+import { destinations } from './data.js';
 
 const getMatches = (query: string): boolean => {
     // Prevents SSR issues
@@ -41,4 +42,24 @@ export function useMediaQuery(query: string): boolean | undefined {
     }, [query]);
 
     return initialLoad ? undefined : hasMatch;
+}
+
+
+interface DestinationObj {
+    name: string;
+    images: {
+        png: string;
+        webp: string;
+    };
+    description: string;
+    distance: string;
+    travel: string;
+  }
+
+/**
+ * Returns destination data as an array of destination objects.
+ * @returns
+ */
+export function getAllDestinations(): DestinationObj[] {
+    return destinations;
 }
