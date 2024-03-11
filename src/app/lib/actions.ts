@@ -1,5 +1,5 @@
 import { useState, useEffect, useLayoutEffect } from "react";
-import { destinations } from './data.js';
+import { destination } from './data.js';
 
 const getMatches = (query: string): boolean => {
     // Prevents SSR issues
@@ -60,6 +60,6 @@ interface DestinationObj {
  * Returns destination data as an array of destination objects.
  * @returns
  */
-export function getAllDestinations(): DestinationObj[] {
-    return destinations;
+export function getDestination(): DestinationObj[] {
+    return destination;
 }

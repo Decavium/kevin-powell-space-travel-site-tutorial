@@ -1,16 +1,16 @@
 'use client'
 
 import Image from 'next/image';
-import { getAllDestinations } from '../../lib/actions';
+import { getDestination } from '../../lib/actions';
 
 export default function DestinationTabs() {
-    const destinations = getAllDestinations();
+    const destination = getDestination();
 
     const currentTab = true;
 
     return (
         <>
-            {destinations?.map((tab) => (
+            {destination?.map((tab) => (
                 // currentTab && 
                 <div
                     key={tab.name}
