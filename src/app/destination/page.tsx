@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import BackgroundImage from "../ui/background-image";
-import BackgroundHomeMobile from '/public/images/home/background-home-mobile.jpg';
-import BackgroundHomeDesktop from '/public/images/home/background-home-desktop.jpg';
-import BackgroundHomeTablet from '/public/images/home/background-home-tablet.jpg';
-import Tabs from "../ui/tabs";
+import BackgroundDestinationMobile from '/public/images/destination/background-destination-mobile.jpg';
+import BackgroundDestinationTablet from '/public/images/destination/background-destination-tablet.jpg';
+import BackgroundDestinationDesktop from '/public/images/destination/background-destination-desktop.jpg';
+
 import DestinationTabs from "../ui/destination/destination-tabs";
 
 export const metadata: Metadata = {
@@ -16,17 +16,12 @@ export default function Destination() {
         <main className="grid-container-xxxx grid-container--destination">
             <BackgroundImage
                 alt="The background image."
-                desktop={BackgroundHomeDesktop}
-                mobile={BackgroundHomeMobile}
-                tablet={BackgroundHomeTablet}
+                desktop={BackgroundDestinationDesktop}
+                mobile={BackgroundDestinationMobile}
+                tablet={BackgroundDestinationTablet}
             />
             <div id="main" className="">
                 <h2 className="numbered-title"><span>01</span>pick your destination</h2>
-                <Tabs tabs={[
-                    { name: "Moon" },
-                    { name: "Mars" },
-                    { name: "Europa" },
-                ]} />
                 <DestinationTabs />
             </div>
         </main>

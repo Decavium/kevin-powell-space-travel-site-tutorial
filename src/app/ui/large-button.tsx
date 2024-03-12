@@ -1,13 +1,15 @@
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import Link from 'next/link';
+
+interface ButtonProps extends React.LinkHTMLAttributes<HTMLLinkElement> {
     children: React.ReactNode;
 }
 
-export default function LargeButton({ children, className, ...rest }: ButtonProps) {
+export default function LargeButton({ children, className }: ButtonProps) {
     return (
-        <button
-            {...rest}
+        <Link
+            href="/destination"
             className={`large-button uppercase letter-spacing-2 text-dark bg-white ${className}`} style={{ fontFamily: "--ff-serif" }}>
             {children}
-        </button>
+        </Link>
     )
 }

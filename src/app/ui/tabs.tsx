@@ -1,14 +1,26 @@
-interface tabObj {
+'use client'
+
+import {  useState } from "react";
+
+export interface tabObj {
     name: string;
 }
 
 type Props = {
-    tabs: tabObj[]
+    tabs: tabObj[];
+    setCurrentTab?: any;
 }
 
-export default function Tabs({ tabs }: Props) {
+export default function Tabs({ tabs, setCurrentTab }: Props) {
 
-    const isSelected = (index: number) => index === 0 ? true : false;
+    const [selectedElement, setSelectedElement] = useState(0);
+
+    const isSelected = (index: number) => index === selectedElement ? true : false;
+
+    const handleOnClick = (index: number) => {
+        setSelectedElement(index);
+        setCurrentTab(index);
+    }
 
     return (
         <div className="tab-list underline-indicators flex">
@@ -18,6 +30,7 @@ export default function Tabs({ tabs }: Props) {
                         aria-selected={isSelected(index)}
                         key={tab.name}
                         className={`uppercase text-accent letter-spacing-2 bg-dark`}
+                        onClick={() => handleOnClick(index)}
                     >
                         <p>{tab.name}</p>
                     </button>

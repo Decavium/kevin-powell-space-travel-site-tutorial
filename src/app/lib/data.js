@@ -20,11 +20,11 @@ import ImageAnoushehAnsariWebp from "/public/images/crew/image-anousheh-ansari.w
 
 //Technology
 import ImageLaunchVehicleLandscape from "/public/images/technology/image-launch-vehicle-landscape.jpg";
-import ImageLaunchVehiclePortrait from "/public/images/technology/image-vaunch-vehicle-portrait.jpg";
+import ImageLaunchVehiclePortrait from "/public/images/technology/image-launch-vehicle-portrait.jpg";
 import ImageSpaceCapsuleLandscape from "/public/images/technology/image-space-capsule-landscape.jpg";
 import ImageSpaceCapsulePortrait from "/public/images/technology/image-space-capsule-portrait.jpg";
 import ImageSpaceportLandscape from "/public/images/technology/image-spaceport-landscape.jpg";
-import ImageSpaceportPortrait from "/public/images/technology/image-paceport-portrait.jpg";
+import ImageSpaceportPortrait from "/public/images/technology/image-spaceport-portrait.jpg";
 
 const destination = [
   {

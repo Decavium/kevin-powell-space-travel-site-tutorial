@@ -1,17 +1,20 @@
 'use client'
 
+import { useState } from 'react';
 import Image from 'next/image';
+import Tabs, { tabObj } from '../tabs';
 import { getDestination } from '../../lib/actions';
 
 export default function DestinationTabs() {
     const destination = getDestination();
 
-    const currentTab = true;
+    const [currentTab, setCurrentTab] = useState(0);
 
     return (
         <>
-            {destination?.map((tab) => (
-                // currentTab && 
+            <Tabs tabs={destination?.map((tab) => { let tabName: tabObj = { name: tab.name }; return tabName })} setCurrentTab={setCurrentTab} />
+            {destination?.map((tab, index) => (
+                currentTab == index &&
                 <div
                     key={tab.name}
                     className=""
@@ -30,3 +33,5 @@ export default function DestinationTabs() {
         </>
     );
 }
+
+// {name: string}
