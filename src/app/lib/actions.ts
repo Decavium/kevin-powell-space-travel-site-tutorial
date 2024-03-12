@@ -1,4 +1,5 @@
 import { useState, useEffect, useLayoutEffect } from "react";
+import { StaticImageData } from "next/image.js";
 import { destination } from './data.js';
 
 const getMatches = (query: string): boolean => {
@@ -48,8 +49,8 @@ export function useMediaQuery(query: string): boolean | undefined {
 interface DestinationObj {
     name: string;
     images: {
-        png: string;
-        webp: string;
+        png: StaticImageData;
+        webp: StaticImageData;
     };
     description: string;
     distance: string;

@@ -1,6 +1,6 @@
 'use client'
 
-import {  useState } from "react";
+import { useState } from "react";
 
 export interface tabObj {
     name: string;
@@ -27,6 +27,7 @@ export default function Tabs({ tabs, setCurrentTab }: Props) {
             {tabs.map((tab, index) => {
                 return (
                     <button
+                        role="tab"
                         aria-selected={isSelected(index)}
                         key={tab.name}
                         className={`uppercase text-accent letter-spacing-2 bg-dark`}

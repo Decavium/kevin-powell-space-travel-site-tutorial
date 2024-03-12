@@ -12,26 +12,21 @@ export default function DestinationTabs() {
 
     return (
         <>
-            <Tabs tabs={destination?.map((tab) => { let tabName: tabObj = { name: tab.name }; return tabName })} setCurrentTab={setCurrentTab} />
             {destination?.map((tab, index) => (
                 currentTab == index &&
-                <div
+                <Image
                     key={tab.name}
+                    src={tab.images.webp}
                     className=""
-                >
-                    <Image
-                        src={tab.images.webp}
-                        className=""
-                        width={445}
-                        height={445}
-                        alt={`An artist's depiction of ${tab.name == "Moon" ? "the" : ""} ${tab.name}.`}
-                    />
-                    <p></p>
-
-                </div>
+                    width={445}
+                    height={445}
+                    alt={`An artist's depiction of ${tab.name == "Moon" ? "the" : ""} ${tab.name}.`}
+                />
             ))}
+            <Tabs
+                tabs={destination?.map((tab) => { let tabName: tabObj = { name: tab.name }; return tabName })}
+                setCurrentTab={setCurrentTab}
+            />
         </>
     );
 }
-
-// {name: string}
