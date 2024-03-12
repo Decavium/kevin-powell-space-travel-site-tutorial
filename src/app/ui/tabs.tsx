@@ -19,7 +19,7 @@ export default function Tabs({ tabs, setCurrentTab }: Props) {
 
     const handleOnClick = (index: number) => {
         setSelectedElement(index);
-        setCurrentTab(index);
+        setCurrentTab != null && setCurrentTab(index);
     }
 
     return (
