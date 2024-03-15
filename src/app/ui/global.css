@@ -478,9 +478,13 @@ select {
     border-color: hsl(var(--clr-white) / 1);
 }
 
+/* tab list */
+
 .tab-list {
     --gap: 2rem;
 }
+
+/* dots */
 
 .dot-indicators>* {
     cursor: pointer;
@@ -498,6 +502,35 @@ select {
 .dot-indicators>[aria-selected="true"] {
     background-color: hsl(var(--clr-white) / 1);
 }
+
+/* numbers */
+
+.number-indicators>* {
+    cursor: pointer;
+    font-size: 2rem;
+    position: relative; 
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    text-decoration: none;
+    border: 2px solid;
+    border-color: hsl(var(--clr-white) / .25);
+    background-color: transparent;
+    height: 3.5em;
+}
+
+.number-indicators>*:hover,
+.number-indicators>*:focus {
+    border-color: hsl(var(--clr-white) / 1);
+}
+
+.number-indicators>[aria-selected="true"] {
+    color: hsl(var(--clr-dark));
+    background-color: hsl(var(--clr-white) / 1);
+}
+
+/* background image */
 
 .background-image {
     z-index: -1;
