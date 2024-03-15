@@ -13,18 +13,18 @@ export const metadata: Metadata = {
 
 export default function Destination() {
     return (
-        <main className="grid-container-xxxx grid-container--destination">
+        <>
+            <main id="main" className="grid-container grid-container--destination flow">
+                <h1 className="numbered-title"><span aria-hidden="true">01</span>pick your destination</h1>
+                <DestinationTabs />
+            </main>
             <BackgroundImage
-                alt="The background image."
+                alt="The background image. It shows the void of space, littered with distant stars."
                 desktop={BackgroundDestinationDesktop}
                 mobile={BackgroundDestinationMobile}
                 tablet={BackgroundDestinationTablet}
             />
-            <div id="main" className="">
-                <h2 className="numbered-title"><span>01</span>pick your destination</h2>
-                <DestinationTabs />
-            </div>
-        </main>
+        </>
     );
 }
 

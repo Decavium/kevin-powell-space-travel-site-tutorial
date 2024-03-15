@@ -30,7 +30,8 @@ export default function Tabs({ tabs, setCurrentTab }: Props) {
                         role="tab"
                         aria-selected={isSelected(index)}
                         key={tab.name}
-                        className={`uppercase text-accent letter-spacing-2 bg-dark`}
+                        className={`uppercase text-accent letter-spacing-2`}
+                        style={{ background: 'transparent'}}
                         onClick={() => handleOnClick(index)}
                     >
                         <p>{tab.name}</p>

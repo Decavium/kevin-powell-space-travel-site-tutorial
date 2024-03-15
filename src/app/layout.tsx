@@ -18,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${barlow.className} antialiased ${barlow_condensed.className} antialiased s${bellefair.className} antialiased`}>
-      <body>
+      <body style={{position: "relative"}}>
         <a className="skip-to-content" href="#main">Skip to content</a>
-        <Nav />{children}</body>
+        <Nav />
+        {children}
+        </body>
     </html>
   );
 }

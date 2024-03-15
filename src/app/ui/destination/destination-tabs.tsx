@@ -27,6 +27,23 @@ export default function DestinationTabs() {
                 tabs={destination?.map((tab) => { let tabName: tabObj = { name: tab.name }; return tabName })}
                 setCurrentTab={setCurrentTab}
             />
+            {destination?.map((tab, index) => (
+                currentTab == index &&
+                <article key={tab.name} className='destination-info flow'>
+                    <h2 className='fs-800 uppercase' style={{ fontFamily: "--ff-serif" }}>{tab.name}</h2>
+                    <p>{tab.description}</p>
+                    <div className='destination-meta flex'>
+                        <div>
+                            <h3 className='text-accent fs-200 uppercase'>Avg. Distance</h3>
+                            <p className='uppercase' style={{ fontFamily: "--ff-serif" }}>{tab.distance}</p>
+                        </div>
+                        <div>
+                            <h3 className='text-accent fs-200 uppercase'>Est. travel time</h3>
+                            <p className='uppercase' style={{ fontFamily: "--ff-serif" }}>{tab.travel}</p>
+                        </div>
+                    </div>
+                </article>
+            ))}
         </>
     );
 }

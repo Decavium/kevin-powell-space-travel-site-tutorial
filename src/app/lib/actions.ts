@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect } from "react";
 import { StaticImageData } from "next/image.js";
-import { destination } from './data.js';
+import { destination, crew, technology } from './data.js';
 
 const getMatches = (query: string): boolean => {
     // Prevents SSR issues
@@ -55,7 +55,7 @@ interface DestinationObj {
     description: string;
     distance: string;
     travel: string;
-  }
+}
 
 /**
  * Returns destination data as an array of destination objects.
@@ -63,4 +63,39 @@ interface DestinationObj {
  */
 export function getDestination(): DestinationObj[] {
     return destination;
+}
+
+interface CrewObj {
+    name: string;
+    images: {
+        png: StaticImageData;
+        webp: StaticImageData;
+    };
+    role: string;
+    bio: string;
+}
+
+/**
+ * Returns crew data as an array of crew objects.
+ * @returns
+ */
+export function getCrew(): CrewObj[] {
+    return crew;
+}
+
+interface TechnologyObj {
+    name: string;
+    images: {
+        portrait: StaticImageData;
+        landscape: StaticImageData;
+    };
+    description: string;
+}
+
+/**
+ * Returns technology data as an array of technology objects.
+ * @returns
+ */
+export function getTechnology(): TechnologyObj[] {
+    return technology;
 }

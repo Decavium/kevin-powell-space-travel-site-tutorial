@@ -6,14 +6,8 @@ import BackgroundHomeTablet from '/public/images/home/background-home-tablet.jpg
 
 export default function Home() {
   return (
-    <main className="home">
-      <BackgroundImage
-              alt="The background image. It shows Earth from low orbit."
-              desktop={BackgroundHomeDesktop}
-              mobile={BackgroundHomeMobile}
-              tablet={BackgroundHomeTablet}
-      />
-      <div id="main" className="grid-container grid-container--home">
+    <>
+      <main id="main" className="grid-container grid-container--home flow">
         <div>
           <h1 className="text-accent fs-500 uppercase letter-spacing-1">So, you want to travel to
             <span className="fs-900 text-white d-block" style={{ fontFamily: "--ff-serif" }}>Space</span>
@@ -27,7 +21,13 @@ export default function Home() {
         <div>
           <LargeButton>Explore</LargeButton>
         </div>
-      </div>
-    </main>
+      </main>
+      <BackgroundImage
+              alt="The background image. It shows Earth from low orbit."
+              desktop={BackgroundHomeDesktop}
+              mobile={BackgroundHomeMobile}
+              tablet={BackgroundHomeTablet}
+      />
+    </>
   );
 }
