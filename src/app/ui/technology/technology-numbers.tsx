@@ -27,7 +27,7 @@ export default function TechnologyNumbers() {
                 currentNumber == index &&
                 <article key={technology.name} className='technology-meta flow'>
                     <header className='flow flow--space-small'>
-                        <h2 className='fs-600 uppercase text-accent'>the terminology ...</h2>
+                        <h2 className='fs-400 uppercase text-accent'>the terminology ...</h2>
                         <p className='fs-700 uppercase' style={{ fontFamily: "--ff-serif" }}>{technology.name}</p>
                     </header>
                     <p className='text-accent'>{technology.description}</p>
