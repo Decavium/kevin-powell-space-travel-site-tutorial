@@ -83,7 +83,7 @@ export function getCrew(): CrewObj[] {
     return crew;
 }
 
-interface TechnologyObj {
+export interface TechnologyObj {
     name: string;
     images: {
         portrait: StaticImageData;

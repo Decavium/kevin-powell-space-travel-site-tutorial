@@ -410,7 +410,7 @@ select {
 
     .nav-icon {
         width: auto;
-        height: 1.5rem;
+        height: 1.25rem;
     }
 
     .nav-open {
@@ -508,7 +508,7 @@ select {
 .number-indicators>* {
     cursor: pointer;
     font-size: 2rem;
-    position: relative; 
+    position: relative;
     display: inline-grid;
     place-items: center;
     border-radius: 50%;
@@ -638,6 +638,38 @@ select {
     color: hsl(var(--clr-white) / .5);
 }
 
+/* technology layout */
+
+.grid-container--technology {
+    --flow-space: 2rem;
+    grid-template-areas:
+        'title'
+        'image'
+        'numbers'
+        'content';
+}
+
+.grid-container--technology>img {
+    grid-area: image;
+    height: auto;
+
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 100vw;
+	position: relative;
+	width: 100vw;
+}
+
+.grid-container--technology .number-indicators{
+    grid-auto-flow: column;
+}
+
+.grid-container--technology .number-indicators>*{
+    font-size: 1.5rem;
+    height: 3rem;
+}
+
+
 @media (min-width: 35em) {
     .numbered-title {
         justify-self: start;
@@ -708,7 +740,7 @@ select {
             '. dots image .';
     }
 
-    .grid-container--crew> img {
+    .grid-container--crew>img {
         grid-column: span 2;
         /* align-self: end; */
         max-width: 90%;

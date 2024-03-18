@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Numbers, { numberObj } from '../numbers';
-import { getTechnology } from '../../lib/actions';
+import { getTechnology, TechnologyObj, useMediaQuery } from '../../lib/actions';
 
 export default function TechnologyNumbers() {
     const technologies = getTechnology();
@@ -12,31 +12,59 @@ export default function TechnologyNumbers() {
 
     return (
         <>
+            {technologies?.map((technology, index) => (
+                currentNumber == index &&
+                <TechnologyImage
+                    key={technology.name}
+                    technology={technology}
+                />
+            ))}
             <Numbers
                 numbers={technologies?.map((technology) => { let numberName: numberObj = { name: technology.name }; return numberName })}
                 setCurrentNumber={setCurrentNumber}
             />
             {technologies?.map((technology, index) => (
                 currentNumber == index &&
-                <article key={technology.name} className='crew-details flow'>
+                <article key={technology.name} className='technology-meta flow'>
                     <header className='flow flow--space-small'>
-                        <h2 className='fs-600 uppercase' style={{ fontFamily: "--ff-serif" }}>the terminology ...</h2>
+                        <h2 className='fs-600 uppercase text-accent'>the terminology ...</h2>
                         <p className='fs-700 uppercase' style={{ fontFamily: "--ff-serif" }}>{technology.name}</p>
                     </header>
                     <p className='text-accent'>{technology.description}</p>
                 </article>
             ))}
-            {technologies?.map((technology, index) => (
-                currentNumber == index &&
+
+        </>
+    );
+}
+
+interface TechnologyImageProps {
+    technology: TechnologyObj;
+}
+
+export function TechnologyImage({ technology }: TechnologyImageProps) {
+
+    // 45rem
+    const isTablet = useMediaQuery(`(max-width: 720px)`);
+
+    return (
+        <>
+            {(isTablet || isTablet === undefined) &&
                 <Image
-                    key={technology.name}
+                    src={technology.images.landscape}
+                    className=""
+                    width={515}
+                    height={527}
+                    alt={technology.name}
+                />}
+            {(!isTablet || isTablet === undefined) &&
+                <Image
                     src={technology.images.portrait}
                     className=""
-                    width={575}
-                    height={700}
+                    width={768}
+                    height={310}
                     alt={technology.name}
-                />
-            ))}
+                />}
         </>
     );
 }
